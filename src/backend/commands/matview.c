@@ -257,7 +257,7 @@ ExecRefreshMatView(RefreshMatViewStmt *stmt, const char *queryString,
 					 errmsg("cannot refresh materialized view \"%s\" concurrently",
 							quote_qualified_identifier(get_namespace_name(RelationGetNamespace(matviewRel)),
 													   RelationGetRelationName(matviewRel))),
-					 errhint("Create a unique index with no WHERE clause on one or more columns of the materialized view.")));
+					 errhint("Create a unique index with no WHERE clause on one or more plain columns (not expressions) of the materialized view.")));
 	}
 
 	/*
